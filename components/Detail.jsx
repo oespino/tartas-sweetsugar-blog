@@ -19,7 +19,7 @@ export default function Detail({ id, title, date, category, image, contentHtml }
                     <a href="#"><Image src={`/share_icon.svg`} layout="fixed" height={50} width={50} onClick={() => handleClick()}></Image></a>
                 </div>
             </div>
-            <Image src={`/images/${image}`} height={300} width={900} layout="responsive" objectFit="cover"></Image>
+            <Image src={`/images/${image}`} height={535} width={700} layout="responsive" objectFit="cover"></Image>
             <div className="py-4" dangerouslySetInnerHTML={{ __html: contentHtml }} />
         </div>
     )
