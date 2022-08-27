@@ -5,7 +5,7 @@ export default function Detail({ id, title, date, category, image, contentHtml }
     function handleClick() {
         if (navigator.share) {
             navigator.share({
-                title: title,
+                title: `Tartas Sweet Sugar - ${title}`,
                 url: window.location.href
             })
         }
