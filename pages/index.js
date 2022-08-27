@@ -2,7 +2,7 @@ import Head from 'next/head'
 import Footer from '../components/Footer'
 import Header from '../components/Header'
 import Preview from '../components/Preview'
-import { getSortedPostsData } from '../lib/posts'
+import { getLastPostsData } from '../lib/posts'
 
 export default function Home({ posts }) {
 
@@ -34,7 +34,7 @@ export default function Home({ posts }) {
 }
 
 export async function getStaticProps() {
-  const posts = getSortedPostsData()
+  const posts = getLastPostsData()
   return {
     props: {
       posts
