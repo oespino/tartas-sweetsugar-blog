@@ -55,7 +55,11 @@ export default function Header() {
                     </ul>
                 </div>
                 <div className='absolute top-0 right-10 lg:-top-2 lg:left-10 lg:right-auto'>
-                    <Image src="/logo.png" height={120} width={100} />
+                    <Link href="/">
+                        <a>
+                            <Image src="/logo.png" height={120} width={100} />
+                        </a>
+                    </Link>
                 </div>
             </div>
         </nav>
