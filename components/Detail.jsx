@@ -15,7 +15,7 @@ export default function Detail({ id, title, date, category, image, contentHtml }
         <div>
             <div className='flex justify-between'>
                 <h3 className="text-4xl font-bold pb-8">{title}</h3>
-                <div className="text-right fill-cyan-700 mx-4">
+                <div className="text-right fill-cyan-700">
                     <a href="#"><Image src={`/share_icon.svg`} layout="fixed" height={50} width={50} onClick={() => handleClick()}></Image></a>
                 </div>
             </div>
