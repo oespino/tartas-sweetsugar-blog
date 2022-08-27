@@ -18,11 +18,13 @@ export default function Home({ posts }) {
       <main className="bg-yellow-100 text-yellow-800 bottom-28 top-28 flex-grow">
         <h2 className='text-2xl text-center mt-10'>Últimas recetas</h2>
         <div className='mb-10 flex flex-wrap justify-center'>
-          {posts && posts.length ? posts.map(post => (
-            <div key={post.id} className='m-4'>
-              <Preview id={post.id} title={post.title} date={post.date} category={post.category} image={post.image} />
-            </div>
-          )) : ''}
+          <div className="flex flex-wrap justify-center max-w-screen-xl mx-4 px-6 lg:px-12 py-8">
+            {posts && posts.length ? posts.map(post => (
+              <div key={post.id} className='m-2'>
+                <Preview id={post.id} title={post.title} date={post.date} category={post.category} image={post.image} />
+              </div>
+            )) : ''}
+          </div>
         </div>
       </main>
 
