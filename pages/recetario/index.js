@@ -24,7 +24,8 @@ export async function getStaticProps() {
     const posts = getSortedPostsData()
     const postObjectGroupByLetter = {}
     for (const post of posts) {
-        const initialLetter = post.title[0].toUpperCase()
+        const titleFormatted = post.title.replace(/[^\w]/g, '')
+        const initialLetter = titleFormatted[0].toUpperCase()
         if (!postObjectGroupByLetter[initialLetter]) postObjectGroupByLetter[initialLetter] = []
         postObjectGroupByLetter[initialLetter].push(post)
     }
