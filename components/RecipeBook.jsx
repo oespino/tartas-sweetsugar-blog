@@ -4,7 +4,6 @@ export default function RecipeBook({ posts }) {
         if (a < b) return -1
         return 1
     })
-    console.log({ entries })
 
     return (
         <main className="bg-yellow-100 text-yellow-800 bottom-28 top-28 flex-grow flex justify-center">

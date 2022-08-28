@@ -28,7 +28,6 @@ export async function getStaticProps() {
         if (!postObjectGroupByLetter[initialLetter]) postObjectGroupByLetter[initialLetter] = []
         postObjectGroupByLetter[initialLetter].push(post)
     }
-    console.error({ postObjectGroupByLetter })
     return {
         props: {
             posts: postObjectGroupByLetter
