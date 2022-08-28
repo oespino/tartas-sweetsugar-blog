@@ -14,7 +14,7 @@ export default function RecipeBook({ posts }) {
                         {entries && entries.length ? entries.map(letter => (
                             <div key={letter} className='m-4 '>
                                 <h2 className="text-2xl">{letter}</h2>
-                                <ul className="list-disc list-inside">
+                                <ul className="list-disc">
                                     {posts[letter] && posts[letter].length ? posts[letter].map(post => (
                                         <li key={post.id} className="text-sm"><a href={`/post/${post.id}`}>{post.title}</a></li>
                                     )) : ''}
