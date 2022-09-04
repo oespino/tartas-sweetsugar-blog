@@ -10,7 +10,7 @@ export default function Footer() {
         },
         {
             title: "CONTACTAR",
-            location: '/contactar'
+            location: 'mailto:tartassweetsugar@gmail.com'
         }
     ]
 
