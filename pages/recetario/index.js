@@ -21,7 +21,7 @@ export default function RecipePage({ posts }) {
 }
 
 export async function getStaticProps() {
-    const posts = getSortedPostsData()
+    const posts = getSortedPostsData('title', 'ASC')
     const postObjectGroupByLetter = {}
     for (const post of posts) {
         const titleFormatted = post.title.replace(/[^\w]/g, '')
