@@ -1,8 +1,8 @@
 ---
 title: "Cookies Red Velvet craqueladas"
-date: "2022-10-27”
+date: "2022-10-27"
 category: "receta"
-image: “cookies-red-velvet-craqueladas.jpg"
+image: "cookies-red-velvet-craqueladas.jpg"
 ---
 
 ## INGREDIENTES
