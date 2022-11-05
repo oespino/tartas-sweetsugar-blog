@@ -10,6 +10,7 @@ export default function RecipePage({ posts }) {
         <div className='flex flex-col min-h-screen'>
             <Head>
                 <title>Tartas Sweet Sugar - Recetario</title>
+                <meta name="description" content="Web con recetas de postres, tartas y todo tipo de dulces. Aprende repostería siguiendo mis consejos." />
                 <link rel="icon" href="/favicon.png" />
             </Head>
 
