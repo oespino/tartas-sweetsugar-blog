@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-export default function Preview({ id, title, date, category, image }) {
+export default function PreviewSmall({ id, title, date, category, image }) {
 
     return (
         <article>
