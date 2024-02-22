@@ -26,7 +26,7 @@ export default function Home({ veryLastPost, lastPosts }) {
         </div>
         <h2 className='text-2xl text-center mt-10'>Últimas recetas</h2>
         <div className='mb-10 flex flex-wrap justify-center'>
-          <div className="flex flex-wrap justify-center max-w-screen-xl mx-4 px-6 lg:px-12 py-8">
+          <div className="flex flex-wrap justify-between max-w-screen-xl mx-4 px-6 lg:px-12 py-8">
             {lastPosts && lastPosts.length ? lastPosts.map(post => (
               <div key={post.id} className='m-2'>
                 <PreviewSmall id={post.id} title={post.title} date={post.date} category={post.category} image={post.image} />
