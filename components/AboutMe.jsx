@@ -11,7 +11,7 @@ export default function AboutMe() {
                 </div>
 
                 <div className="py-8 flex justify-center">
-                    <Image src="/profile.jpg" height={320} width={250} />
+                    <Image src="/profile.jpg" height={320} width={250} alt='Profile image'/>
                 </div>
 
                 <div className="text-xl py-4">

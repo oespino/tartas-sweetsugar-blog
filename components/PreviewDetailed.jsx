@@ -1,4 +1,4 @@
-import Image from 'next/image'
+import Image from "next/image"
 import Link from 'next/link'
 
 export default function PreviewDetailed({ id, title, date, category, image, contentHtml }) {
@@ -11,7 +11,18 @@ export default function PreviewDetailed({ id, title, date, category, image, cont
                 </Link>
             </div>
             <Link href={`/post/${id}`}>
-                <Image src={`/images/${image}`} height={150} width={700} layout="responsive" style={{ objectFit: "cover" }} className='max-h-60'></Image>
+                <Image
+                    alt="Main image"
+                    src={`/images/${image}`}
+                    height={150}
+                    width={700}
+                    className='max-h-60'
+                    sizes="100vw"
+                    style={{
+                        objectFit: "cover",
+                        width: "100%",
+                        height: "auto"
+                    }}></Image>
             </Link>
             <div className="py-4" dangerouslySetInnerHTML={{ __html: contentHtml }} />
             <div className='absolute flex w-full items-end justify-end left-0 bottom-0 m-0 h-20 bg-gradient-to-t from-yellow-100'>
@@ -22,6 +33,6 @@ export default function PreviewDetailed({ id, title, date, category, image, cont
                 </div>
             </div>
         </article >
-    )
+    );
 
 }

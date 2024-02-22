@@ -6,10 +6,12 @@ import { getAllPostIds, getPostData } from '../../lib/posts'
 
 export default function PostDetail({ post }) {
 
+    const pageTitle = `Tartas Sweet Sugar - ${post.title}`
+
     return (
         <div className='flex flex-col min-h-screen'>
             <Head>
-                <title>Tartas Sweet Sugar - {post.title}</title>
+                <title>{pageTitle}</title>
                 <link rel="icon" href="/favicon.png" />
             </Head>
 
