@@ -1,3 +1,5 @@
+import Link from "next/link"
+
 export default function RecipeBook({ posts }) {
 
     const entries = Object.keys(posts).sort((a, b) => {
@@ -16,7 +18,7 @@ export default function RecipeBook({ posts }) {
                                 <h2 className="text-2xl">{letter}</h2>
                                 <ul className="list-disc">
                                     {posts[letter] && posts[letter].length ? posts[letter].map(post => (
-                                        <li key={post.id} className="text-sm"><a href={`/post/${post.id}`}>{post.title}</a></li>
+                                        <li key={post.id} className="text-sm"><Link href={`/post/${post.id}`}>{post.title}</Link></li>
                                     )) : ''}
                                 </ul>
                             </div>
