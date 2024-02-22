@@ -25,12 +25,12 @@ export default function Footer() {
                     ))}
                     <div className='p-4 ml-auto'>¡SÍGUEME!</div>
                     <div className='px-4 flex justify-center'>
-                        <a className='px-4' href="https://www.instagram.com/tartas_sweetsugar/">
-                            <Image src="/instagram_logo.svg" className='fill-white' height={48} width={48} />
-                        </a>
-                        <a className='px-4' href="https://www.facebook.com/tartassweetsugar/">
-                            <Image src="/facebook_logo.svg" className='fill-white' height={48} width={48} />
-                        </a>
+                        <Link className='px-4' href="https://www.instagram.com/tartas_sweetsugar/">
+                            <Image alt='Instagram logo' src="/instagram_logo.svg" className='fill-white' height={48} width={48} />
+                        </Link>
+                        <Link className='px-4' href="https://www.facebook.com/tartassweetsugar/">
+                            <Image alt='Facebook logo' src="/facebook_logo.svg" className='fill-white' height={48} width={48} />
+                        </Link>
                     </div>
                 </div>
             </div>

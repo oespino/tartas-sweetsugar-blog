@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function AboutMe() {
 
@@ -10,7 +11,7 @@ export default function AboutMe() {
                 </div>
 
                 <div className="py-8 flex justify-center">
-                    <Image src="/profile.jpg" height={320} width={250} />
+                    <Image src="/profile.jpg" height={320} width={250} alt='Profile image'/>
                 </div>
 
                 <div className="text-xl py-4">
@@ -39,7 +40,7 @@ export default function AboutMe() {
                     que si os apetece me hagais peticiones para que las podais ver hechas realidad.
                 </div>
                 <div className="text-xl py-4 break-words">
-                    Si os quereis poner en contacto conmigo podeis hacerlo desde el correo electrónico <a className="font-bold" href="mailto:tartassweetsugar@gmail.com">tartassweetsugar@gmail.com</a>
+                    Si os quereis poner en contacto conmigo podeis hacerlo desde el correo electrónico <Link className="font-bold" href="mailto:tartassweetsugar@gmail.com">tartassweetsugar@gmail.com</Link>
                 </div>
             </div>
         </main>

@@ -49,16 +49,14 @@ export default function Header() {
                     <ul className={`mr-auto lg:flex lg:flex-row ${menuVisible ? '' : 'hidden'}`}>
                         {headerNavs.map(hn => (
                             <li className={router.pathname === hn.location ? "font-bold nav-item" : "nav-item"} key={hn.location}>
-                                <Link href={hn.location}><a className="block pr-2 lg:px-6 py-2 text-white hover:text-yellow-100 focus:text-yellow-100">{hn.title}</a></Link>
+                                <Link href={hn.location} className="block pr-2 lg:px-6 py-2 text-white hover:text-yellow-100 focus:text-yellow-100">{hn.title}</Link>
                             </li>
                         ))}
                     </ul>
                 </div>
                 <div className='absolute top-0 right-10 lg:-top-2 lg:left-10 lg:right-auto'>
                     <Link href="/">
-                        <a>
-                            <Image src="/logo.png" height={120} width={100} />
-                        </a>
+                        <Image alt="Web logo" src="/logo.png" height={120} width={100} />
                     </Link>
                 </div>
             </div>
