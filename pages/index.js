@@ -12,7 +12,17 @@ export default function Home({ veryLastPost, lastPosts }) {
       <Head>
         <title>Tartas Sweet Sugar</title>
         <meta name="description" content="Web con recetas de postres, tartas y todo tipo de dulces. Aprende repostería siguiendo mis consejos." />
+        <link rel="canonical" href="https://www.sweet-sugar.es/"></link>
+        <meta property="og:title" content="Tartas Sweet Sugar"></meta>
+        <meta property="og:description" content="Web con recetas de postres, tartas y todo tipo de dulces. Aprende repostería siguiendo mis consejos."></meta>
+        <meta property="og:image" content="https://www.sweet-sugar.es/favicon.png"></meta>
+        <meta property="og:type" content="website"></meta>
+        <meta name="twitter:card" content="summary_large_image"></meta>
+        <meta property="twitter:title" content="Tartas Sweet Sugar"></meta>
+        <meta property="twitter:description" content="Web con recetas de postres, tartas y todo tipo de dulces. Aprende repostería siguiendo mis consejos."></meta>
+        <meta property="twitter:image" content="https://www.sweet-sugar.es/favicon.png"></meta>
         <link rel="icon" href="/favicon.png" />
+        <meta name="google-site-verification" content="r7uW_bdPUGlX8OrYugYNmMFRrW6DAZW1XVNSwERpvCI" />
       </Head>
 
       <Header />
