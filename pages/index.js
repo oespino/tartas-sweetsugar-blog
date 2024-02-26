@@ -22,6 +22,7 @@ export default function Home({ veryLastPost, lastPosts }) {
         <meta property="twitter:description" content="Web con recetas de postres, tartas y todo tipo de dulces. Aprende repostería siguiendo mis consejos."></meta>
         <meta property="twitter:image" content="https://www.sweet-sugar.es/favicon.png"></meta>
         <link rel="icon" href="/favicon.png" />
+        <meta name="google-site-verification" content="r7uW_bdPUGlX8OrYugYNmMFRrW6DAZW1XVNSwERpvCI" />
       </Head>
 
       <Header />
