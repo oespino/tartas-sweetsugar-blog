@@ -44,12 +44,21 @@ export async function getStaticPaths() {
     const paths = getAllPostIds()
     return {
         paths,
-        fallback: false
+        // En desarrollo, el servidor cachea la lista de rutas y devuelve 404 la primera vez que se
+        // abre una receta creada con el servidor ya arrancado. En producción todas las rutas se
+        // generan en el build, así que se mantiene fallback: false.
+        fallback: process.env.NODE_ENV === 'development' ? 'blocking' : false
     }
 }
 
 export async function getStaticProps({ params }) {
-    const post = await getPostData(params.id)
+    let post
+    try {
+        post = await getPostData(params.id)
+    } catch (error) {
+        if (error.code === 'ENOENT') return { notFound: true }
+        throw error
+    }
     return {
         props: {
             post
