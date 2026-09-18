@@ -75,7 +75,7 @@ export default function Header() {
                 </div>
                 <div className='absolute top-0 right-10 z-30 lg:-top-2 lg:left-10 lg:right-auto'>
                     <Link href="/">
-                        <Image alt="Tartas Sweet Sugar" src="/logo.png" height={120} width={100} className="drop-shadow-md" />
+                        <Image alt="Tartas Sweet Sugar" src="/logo.png" height={130} width={100} className="drop-shadow-md" />
                     </Link>
                 </div>
             </div>

@@ -30,7 +30,7 @@ export default function Detail({ id, title, date, category, image, contentHtml }
                 width={700}
                 sizes="(min-width: 768px) 688px, 100vw"
                 alt={title}
-                priority
+                preload
                 className="rounded-xl"
                 style={{
                     objectFit: "cover",

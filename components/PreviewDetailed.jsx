@@ -15,6 +15,7 @@ export default function PreviewDetailed({ id, title, date, category, image, cont
                         width={700}
                         className='max-h-60 transition-transform duration-500 motion-safe:group-hover:scale-105'
                         sizes="(min-width: 768px) 768px, 100vw"
+                        preload
                         style={{
                             objectFit: "cover",
                             width: "100%",
