@@ -27,7 +27,7 @@ export default function Home({ veryLastPost, lastPosts }) {
 
       <Header />
 
-      <main className="bg-yellow-100 text-yellow-800 bottom-28 top-28 flex-grow">
+      <main className="bg-yellow-100 text-yellow-800 bottom-28 top-28 grow">
         <div className='my-10 flex flex-wrap justify-center'>
           <div className="flex flex-wrap justify-center max-w-screen-xl mx-4 px-6 lg:px-12 pt-8 pb-2">
             {veryLastPost ? <PreviewDetailed id={veryLastPost.id} title={veryLastPost.title} contentHtml={veryLastPost.contentHtml} image={veryLastPost.image} />

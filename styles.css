@@ -1,3 +1,4 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+/* Clases generadas por rehype-add-classes en lib/posts.js */
+@source inline("{list-disc,list-inside,list-decimal,text-2xl,text-lg,font-bold,py-4,p-4,py-2,italic}");

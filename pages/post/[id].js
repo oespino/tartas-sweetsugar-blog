@@ -28,7 +28,7 @@ export default function PostDetail({ post }) {
 
             <Header />
 
-            <main className="bg-yellow-100 text-yellow-800 bottom-28 top-28 flex-grow flex justify-center">
+            <main className="bg-yellow-100 text-yellow-800 bottom-28 top-28 grow flex justify-center">
                 <div className="bg-white max-w-screen-lg mx-4 px-6 lg:px-12 py-8 my-16">
                     <div className='mb-10 flex flex-wrap justify-center'>
                         <Detail id={post.id} title={post.title} date={post.date} image={post.image} contentHtml={post.contentHtml} />

@@ -4,7 +4,7 @@ import Link from 'next/link'
 export default function AboutMe() {
 
     return (
-        <main className="bg-yellow-100 text-yellow-800 bottom-28 top-28 flex-grow flex justify-center">
+        <main className="bg-yellow-100 text-yellow-800 bottom-28 top-28 grow flex justify-center">
             <div className="bg-white max-w-screen-lg mx-4 px-6 lg:px-12 py-8 my-16">
                 <div className="text-4xl py-2 font-bold">
                     <h1>Sobre mí</h1>
@@ -39,7 +39,7 @@ export default function AboutMe() {
                     Ahora, con ganas de nuevos retos, he decidido publicar mis creaciones esperando que os gusten y
                     que si os apetece me hagais peticiones para que las podais ver hechas realidad.
                 </div>
-                <div className="text-xl py-4 break-words">
+                <div className="text-xl py-4 wrap-break-word">
                     Si os quereis poner en contacto conmigo podeis hacerlo desde el correo electrónico <Link className="font-bold" href="mailto:tartassweetsugar@gmail.com">tartassweetsugar@gmail.com</Link>
                 </div>
             </div>

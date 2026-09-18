@@ -25,7 +25,7 @@ export default function PreviewDetailed({ id, title, date, category, image, cont
                     }}></Image>
             </Link>
             <div className="py-4" dangerouslySetInnerHTML={{ __html: contentHtml }} />
-            <div className='absolute flex w-full items-end justify-end left-0 bottom-0 m-0 h-20 bg-gradient-to-t from-yellow-100'>
+            <div className='absolute flex w-full items-end justify-end left-0 bottom-0 m-0 h-20 bg-linear-to-t from-yellow-100'>
                 <div className='h-min'>
                     <Link className='font-bold hover:opacity-80 focus:opacity-80' href={`/post/${id}`}>
                         Leer más...
