@@ -27,23 +27,20 @@ export default function Home({ veryLastPost, lastPosts }) {
 
       <Header />
 
-      <main className="bg-yellow-100 text-yellow-800 bottom-28 top-28 grow">
-        <div className='my-10 flex flex-wrap justify-center'>
-          <div className="flex flex-wrap justify-center max-w-screen-xl mx-4 px-6 lg:px-12 pt-8 pb-2">
-            {veryLastPost ? <PreviewDetailed id={veryLastPost.id} title={veryLastPost.title} contentHtml={veryLastPost.contentHtml} image={veryLastPost.image} />
-              : ''}
-          </div>
-        </div>
-        <h2 className='text-2xl text-center mt-10'>Últimas recetas</h2>
-        <div className='mb-10 flex flex-wrap justify-center'>
-          <div className="flex flex-wrap justify-between max-w-screen-xl mx-4 px-6 lg:px-12 py-8">
+      <main className="grow pb-16">
+        <section className="mx-auto w-full max-w-3xl px-4 pt-16 sm:pt-20">
+          {veryLastPost ? <PreviewDetailed id={veryLastPost.id} title={veryLastPost.title} contentHtml={veryLastPost.contentHtml} image={veryLastPost.image} />
+            : ''}
+        </section>
+        <section className="mx-auto w-full max-w-screen-lg px-4 pt-14">
+          <h2 className='text-center text-3xl font-bold'>Últimas recetas</h2>
+          <div className="mx-auto mt-3 mb-10 h-1 w-16 rounded-full bg-yellow-800/30"></div>
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {lastPosts && lastPosts.length ? lastPosts.map(post => (
-              <div key={post.id} className='m-2'>
-                <PreviewSmall id={post.id} title={post.title} date={post.date} category={post.category} image={post.image} />
-              </div>
+              <PreviewSmall key={post.id} id={post.id} title={post.title} date={post.date} category={post.category} image={post.image} />
             )) : ''}
           </div>
-        </div>
+        </section>
       </main>
 
       <Footer />

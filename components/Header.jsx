@@ -23,40 +23,59 @@ export default function Header() {
     ]
 
     return (
-        <nav className="navbar navbar-expand-lg shadow-md py-8 bg-yellow-800 relative flex items-center w-full justify-between">
-            <div className="px-6 lg:px-0 w-full flex flex-wrap items-center justify-between max-w-screen-lg mx-auto relative">
+        <nav className="relative w-full bg-yellow-800 py-8 shadow-lg shadow-yellow-900/20 text-yellow-50">
+            <div className="relative mx-auto flex w-full max-w-screen-lg flex-wrap items-center justify-between px-6 lg:px-0">
                 <div className="flex items-center">
                     <button
-                        className="border-0 py-3 lg:hidden leading-none text-xl bg-transparent text-white-600 hover:text-gray-700 focus:text-gray-700 transition-shadow duration-150 ease-in-out mr-6"
+                        className="mr-6 cursor-pointer py-3 leading-none lg:hidden"
                         type="button"
+                        aria-label={menuVisible ? 'Cerrar menú' : 'Abrir menú'}
+                        aria-expanded={menuVisible}
+                        aria-controls="main-menu"
                         onClick={() => setMenuVisible(!menuVisible)}
                     >
                         <svg
                             aria-hidden="true"
                             focusable="false"
-                            className="w-5"
+                            className="w-6"
                             role="img"
-                            viewBox="0 0 448 512"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="2.5"
+                            strokeLinecap="round"
                         >
-                            <path
-                                fill="white"
-                                d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"
-                            ></path>
+                            <path d={menuVisible ? 'M6 6l12 12M18 6L6 18' : 'M3 6h18M3 12h18M3 18h18'} />
                         </svg>
                     </button>
                 </div>
                 <div className="grow lg:pl-40">
-                    <ul className={`mr-auto lg:flex lg:flex-row ${menuVisible ? '' : 'hidden'}`}>
-                        {headerNavs.map(hn => (
-                            <li className={router.pathname === hn.location ? "font-bold nav-item" : "nav-item"} key={hn.location}>
-                                <Link href={hn.location} className="block pr-2 lg:px-6 py-2 text-white hover:text-yellow-100 focus:text-yellow-100">{hn.title}</Link>
-                            </li>
-                        ))}
+                    <ul
+                        id="main-menu"
+                        className={`absolute inset-x-0 top-full z-20 mt-8 border-t border-yellow-100/15 bg-yellow-800 py-2 shadow-xl shadow-yellow-900/30 lg:static lg:z-auto lg:mt-0 lg:flex lg:flex-row lg:gap-2 lg:border-0 lg:bg-transparent lg:p-0 lg:shadow-none ${menuVisible ? 'block' : 'hidden'}`}
+                    >
+                        {headerNavs.map(hn => {
+                            const active = router.pathname === hn.location
+                            return (
+                                <li key={hn.location}>
+                                    <Link
+                                        href={hn.location}
+                                        aria-current={active ? 'page' : undefined}
+                                        onClick={() => setMenuVisible(false)}
+                                        className={`block border-l-4 px-6 py-3.5 tracking-widest transition-colors lg:mx-4 lg:border-b-2 lg:border-l-0 lg:px-0 lg:py-2 lg:text-sm ${active
+                                            ? 'border-yellow-100 bg-yellow-100/10 font-bold text-white lg:bg-transparent'
+                                            : 'border-transparent hover:border-yellow-100/60 hover:bg-yellow-100/10 hover:text-white lg:hover:bg-transparent'}`}
+                                    >
+                                        {hn.title}
+                                    </Link>
+                                </li>
+                            )
+                        })}
                     </ul>
                 </div>
-                <div className='absolute top-0 right-10 lg:-top-2 lg:left-10 lg:right-auto'>
+                <div className='absolute top-0 right-10 z-30 lg:-top-2 lg:left-10 lg:right-auto'>
                     <Link href="/">
-                        <Image alt="Web logo" src="/logo.png" height={120} width={100} />
+                        <Image alt="Tartas Sweet Sugar" src="/logo.png" height={120} width={100} className="drop-shadow-md" />
                     </Link>
                 </div>
             </div>

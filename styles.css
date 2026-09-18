@@ -1,4 +1,33 @@
 @import 'tailwindcss';
 
-/* Clases generadas por rehype-add-classes en lib/posts.js */
-@source inline("{list-disc,list-inside,list-decimal,text-2xl,text-lg,font-bold,py-4,p-4,py-2,italic}");
+@theme inline {
+  --font-sans: var(--font-nunito), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-fraunces), ui-serif, Georgia, serif;
+}
+
+@layer base {
+  html {
+    background-color: var(--color-yellow-100);
+  }
+
+  body {
+    color: var(--color-yellow-800);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-display;
+  }
+
+  ::selection {
+    background-color: var(--color-yellow-800);
+    color: var(--color-yellow-100);
+  }
+
+  :focus-visible {
+    outline: 2px solid currentColor;
+    outline-offset: 3px;
+  }
+}

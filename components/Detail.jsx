@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import Link from 'next/link'
 
 export default function Detail({ id, title, date, category, image, contentHtml }) {
 
@@ -14,18 +13,25 @@ export default function Detail({ id, title, date, category, image, contentHtml }
 
     return (
         <div>
-            <div className='flex justify-between'>
-                <h3 className="text-4xl font-bold pb-8">{title}</h3>
-                <div className="text-right fill-cyan-700">
-                    <Link href="#"><Image src={`/share_icon.svg`} height={50} width={50} alt='Share icon' onClick={() => handleClick()}></Image></Link>
-                </div>
+            <div className='flex items-start justify-between gap-4 pb-6'>
+                <h1 className="text-3xl font-bold leading-tight sm:text-4xl">{title}</h1>
+                <button
+                    type="button"
+                    aria-label="Compartir"
+                    className="shrink-0 cursor-pointer rounded-full p-1 transition-opacity hover:opacity-70"
+                    onClick={handleClick}
+                >
+                    <Image src={`/share_icon.svg`} height={40} width={40} alt='' />
+                </button>
             </div>
             <Image
                 src={`/images/${image}`}
                 height={535}
                 width={700}
-                sizes="100vw"
-                alt="Main image" 
+                sizes="(min-width: 768px) 688px, 100vw"
+                alt={title}
+                priority
+                className="rounded-xl"
                 style={{
                     objectFit: "cover",
                     width: "100%",
