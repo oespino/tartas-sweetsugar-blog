@@ -29,9 +29,6 @@ export default function Footer() {
                     <Link className='opacity-90 transition hover:opacity-100 motion-safe:hover:scale-110' href="https://www.instagram.com/tartas_sweetsugar/">
                         <Image alt='Instagram' src="/instagram_logo.svg" height={36} width={36} />
                     </Link>
-                    <Link className='opacity-90 transition hover:opacity-100 motion-safe:hover:scale-110' href="https://www.facebook.com/tartassweetsugar/">
-                        <Image alt='Facebook' src="/facebook_logo.svg" height={36} width={36} />
-                    </Link>
                 </div>
             </div>
         </footer>
