@@ -10,24 +10,36 @@ export default function PostDetail({ post, recipe }) {
     const pageURL = `https://www.sweet-sugar.es/post/${post.id}`
     const imageURL = `https://www.sweet-sugar.es/images/${post.image}`
 
-    // schema.org Recipe (rich results in Google). Only for posts that have ingredients and steps.
+    // schema.org structured data: Recipe (rich results in Google) for posts that have ingredients and
+    // steps, BlogPosting for the rest (diary-style posts).
     const toSteps = steps => steps.map(text => ({ '@type': 'HowToStep', text }))
-    const recipeJsonLd = recipe && {
+    const common = {
         '@context': 'https://schema.org',
-        '@type': 'Recipe',
-        name: post.title,
         description: post.description,
         image: [imageURL],
         datePublished: post.date,
         inLanguage: 'es',
         url: pageURL,
-        author: { '@type': 'Person', name: 'María', url: 'https://www.sweet-sugar.es/sobre-mi' },
-        ...(recipe.yield && { recipeYield: recipe.yield }),
-        recipeIngredient: recipe.ingredients,
-        recipeInstructions: recipe.steps.flatMap(group => group.name
-            ? [{ '@type': 'HowToSection', name: group.name, itemListElement: toSteps(group.steps) }]
-            : toSteps(group.steps))
+        author: { '@type': 'Person', name: 'María', url: 'https://www.sweet-sugar.es/sobre-mi' }
     }
+    const jsonLd = recipe
+        ? {
+            ...common,
+            '@type': 'Recipe',
+            name: post.title,
+            ...(recipe.yield && { recipeYield: recipe.yield }),
+            recipeIngredient: recipe.ingredients,
+            recipeInstructions: recipe.steps.flatMap(group => group.name
+                ? [{ '@type': 'HowToSection', name: group.name, itemListElement: toSteps(group.steps) }]
+                : toSteps(group.steps))
+        }
+        : {
+            ...common,
+            '@type': 'BlogPosting',
+            headline: post.title,
+            mainEntityOfPage: pageURL,
+            publisher: { '@type': 'Organization', name: 'Tartas Sweet Sugar', url: 'https://www.sweet-sugar.es' }
+        }
 
     return (
         <div className='flex flex-col min-h-screen'>
@@ -43,13 +55,11 @@ export default function PostDetail({ post, recipe }) {
                 <meta property="twitter:title" content={pageTitle}></meta>
                 <meta property="twitter:description" content={post.description}></meta>
                 <meta property="twitter:image" content={imageURL}></meta>
-                {recipeJsonLd && (
-                    <script
-                        key="recipe-jsonld"
-                        type="application/ld+json"
-                        dangerouslySetInnerHTML={{ __html: JSON.stringify(recipeJsonLd).replace(/</g, '\\u003c') }}
-                    />
-                )}
+                <script
+                    key="jsonld"
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c') }}
+                />
                 <link rel="icon" href="/favicon.png" />
             </Head>
 
