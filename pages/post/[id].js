@@ -2,9 +2,10 @@ import Head from 'next/head'
 import Footer from '../../components/Footer'
 import Header from '../../components/Header'
 import Detail from '../../components/Detail'
-import { getAllPostIds, getPostData, getRecipeData } from '../../lib/posts'
+import PreviewSmall from '../../components/PreviewSmall'
+import { getAllPostIds, getPostData, getRecipeData, getRelatedPosts } from '../../lib/posts'
 
-export default function PostDetail({ post, recipe }) {
+export default function PostDetail({ post, recipe, related }) {
 
     const pageTitle = `${post.title} | Tartas Sweet Sugar`
     const pageURL = `https://www.sweet-sugar.es/post/${post.id}`
@@ -65,10 +66,22 @@ export default function PostDetail({ post, recipe }) {
 
             <Header />
 
-            <main className="flex grow items-start justify-center px-4">
-                <div className="my-12 w-full max-w-3xl rounded-2xl bg-white p-6 shadow-sm ring-1 ring-yellow-800/10 sm:my-16 sm:p-10">
+            <main className="grow px-4">
+                <div className="mx-auto my-12 w-full max-w-3xl rounded-2xl bg-white p-6 shadow-sm ring-1 ring-yellow-800/10 sm:my-16 sm:p-10">
                     <Detail id={post.id} title={post.title} date={post.date} image={post.image} contentHtml={post.contentHtml} />
                 </div>
+
+                {related.length > 0 && (
+                    <section className="mx-auto mb-16 w-full max-w-screen-lg">
+                        <h2 className="text-center text-3xl font-bold">Más recetas que te pueden gustar</h2>
+                        <div className="mx-auto mt-3 mb-10 h-1 w-16 rounded-full bg-yellow-800/30"></div>
+                        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                            {related.map(relatedPost => (
+                                <PreviewSmall key={relatedPost.id} id={relatedPost.id} title={relatedPost.title} image={relatedPost.image} />
+                            ))}
+                        </div>
+                    </section>
+                )}
             </main>
 
             <Footer />
@@ -99,7 +112,8 @@ export async function getStaticProps({ params }) {
     return {
         props: {
             post,
-            recipe: getRecipeData(params.id)
+            recipe: getRecipeData(params.id),
+            related: getRelatedPosts(params.id)
         }
     }
 }
