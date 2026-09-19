@@ -1,6 +1,6 @@
 ---
 title: "Tarta de queso Philadelphia sin horno"
-date: "2026-09-19"
+date: "2026-09-18"
 category: "receta"
 image: "tarta-queso-sin-horno.jpg"
 ---
