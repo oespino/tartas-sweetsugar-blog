@@ -5,7 +5,7 @@ category: "receta"
 image: "helado-sanito-platano.jpg"
 ---
 
-El otro día mi gran amiga @luala10 me regaló unos plátanos muy ricos! 🥰 y ayer pensé... ¿y si me los como en helado? ¡Y ala! ¡Todo un acierto!!! 😋 ¡Riquísimo!!!
+El otro día mi amiga me regaló unos plátanos muy ricos! 🥰 y ayer pensé... ¿y si me los como en helado? ¡Y ala! ¡Todo un acierto!!! 😋 ¡Riquísimo!!!
 
 ## INGREDIENTES PARA 2-3 PERSONAS
 
