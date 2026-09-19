@@ -3,6 +3,7 @@ title: "Minicupcakes de manzana"
 date: "2014-09-28"
 category: "receta"
 image: "cupcakes-manzana-peques.jpg"
+description: "Minicupcakes de manzana muy jugosos, del tamaño ideal para acompañar el café. Los preparé para el cumpleaños de mi abuela y triunfaron."
 ---
 
 Este año, para el cumple de mi abuela, decidí prepararle unos minicupcakes para que pudiera echar en el café sin problemas. Los hice de manzana porque quedan muy jugosos y la verdad es que fueron un triunfo y les gustaron a todos :D

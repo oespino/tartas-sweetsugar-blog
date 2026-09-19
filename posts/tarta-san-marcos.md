@@ -3,6 +3,7 @@ title: "Tarta San Marcos con crema pastelera"
 date: "2015-12-13"
 category: "receta"
 image: "tarta-san-marcos-blog.jpg"
+description: "Tarta San Marcos de dos pisos rellena de nata y crema pastelera, muy jugosa. Un postre tradicional que es un acierto garantizado."
 ---
 
 Hacía mucho que no podía pasarme por aquí y ¡¡ya lo echaba de menos!! Pero aunque no haya tenido tiempo para actualizar... ¡para seguir cacharreando en la cocina siempre encuentro algún huequito!

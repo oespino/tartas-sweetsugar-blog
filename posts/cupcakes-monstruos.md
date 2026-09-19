@@ -3,6 +3,7 @@ title: "Cupcakes de monstruos! Uuhh..."
 date: "2014-11-11"
 category: "receta"
 image: "cupcakesbichos.jpg"
+description: "Cupcakes de monstruos con Nutella blanca teñida con colorantes y ojitos de fondant. Muy divertidos para celebraciones y para Halloween."
 ---
 
 El mes pasado fue mi cumpleaños y mi cuñada me regaló estos platos tan chulos para colocar los cupcakes, así que aprovechando que iba a llevar una tanda de bollitos para celebrarlo en el curso que estaba estudiando... ¡los estrené! :)

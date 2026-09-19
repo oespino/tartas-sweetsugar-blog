@@ -3,6 +3,7 @@ title: "Cupcakes de cereza y dulce de leche"
 date: "2014-07-30"
 category: "receta"
 image: "cupcake-cereza.jpg"
+description: "Cupcakes de merengue rellenos de dulce de leche y coronados con una cereza, inspirados en el logo de Sweet Sugar. Un bizcocho muy tierno."
 ---
 
 Aqui os dejo un cupcake riquísimo, que está inspirado en el logo de Sweet Sugar.

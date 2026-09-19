@@ -3,6 +3,7 @@ title: "Tarta de moka con forma de árbol y setas de fondant"
 date: "2014-12-08"
 category: "receta"
 image: "tarta-moka-arbol.jpg"
+description: "Tarta de buttercream de moka con forma de árbol y setas de fondant decoradas con colorante en polvo y purpurina."
 ---
 
 Últimamente mi padre esta trayendo un montón de setas a casa, y como ayer fue su cumpleaños y le ENCANTAN, he preparado esta tarta en su honor :)

@@ -3,6 +3,7 @@ title: "Gato y ratón"
 date: "2014-07-21"
 category: "receta"
 image: "tarta-gato-raton.jpg"
+description: "Tarta torneada con forma de gato y su amiguito ratón, de bizcocho. Mi primera tarta esculpida y lo que aprendí al hacerla."
 ---
 
 El día que me propusieron hacer una tarta con forma de gato no se imaginaban la de vueltas de cabeza que me iban a dar jajaja

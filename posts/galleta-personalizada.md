@@ -3,6 +3,7 @@ title: "Galletas Personalizadas"
 date: "2014-10-07"
 category: "receta"
 image: "galleta-personalizada.jpg"
+description: "Galletas caseras con formas diferentes y sin molde, decoradas con glasa real. Cómo conseguir la consistencia perfecta del glaseado."
 ---
 
 Me encanta desayunar con galletas, ¡y más todavía si son caseras! Aunque cuando te miran con esta cara da un poco de pena comérselas jajaja

@@ -3,6 +3,7 @@ title: "Cupcakes de flores"
 date: "2014-09-08"
 category: "receta"
 image: "cupcakes-flores.jpg"
+description: "Cupcakes de flores con buttercream de frambuesa, perfectos para una celebración o una boda. Trucos para decorar con manga pastelera y fondant."
 ---
 
 Estos cupcakes son perfectos para una celebración o incluso para una boda porque tienen una estética muy delicada y un sabor intenso a buttercream de frambuesa.

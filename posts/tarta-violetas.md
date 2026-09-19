@@ -3,6 +3,7 @@ title: "Tarta de sabor a violetas con hojas de chocolate y menta"
 date: "2014-10-19"
 category: "receta"
 image: "tarta-violetas.jpg"
+description: "Tarta de sabor a violetas cubierta con buttercream de vainilla, con florecillas y hojas de chocolate y menta. ¡No sobró ni una pizca!"
 ---
 
 ¡Esta tarta está riquísima! El día 13 de este mes ha sido el cumpleaños de mi madre, y le he hecho esta tarta con sabor a violetas porque es uno de sus preferidos.
