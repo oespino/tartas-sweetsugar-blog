@@ -2,13 +2,32 @@ import Head from 'next/head'
 import Footer from '../../components/Footer'
 import Header from '../../components/Header'
 import Detail from '../../components/Detail'
-import { getAllPostIds, getPostData } from '../../lib/posts'
+import { getAllPostIds, getPostData, getRecipeData } from '../../lib/posts'
 
-export default function PostDetail({ post }) {
+export default function PostDetail({ post, recipe }) {
 
     const pageTitle = `${post.title} | Tartas Sweet Sugar`
     const pageURL = `https://www.sweet-sugar.es/post/${post.id}`
     const imageURL = `https://www.sweet-sugar.es/images/${post.image}`
+
+    // schema.org Recipe (rich results in Google). Only for posts that have ingredients and steps.
+    const toSteps = steps => steps.map(text => ({ '@type': 'HowToStep', text }))
+    const recipeJsonLd = recipe && {
+        '@context': 'https://schema.org',
+        '@type': 'Recipe',
+        name: post.title,
+        description: post.description,
+        image: [imageURL],
+        datePublished: post.date,
+        inLanguage: 'es',
+        url: pageURL,
+        author: { '@type': 'Person', name: 'María', url: 'https://www.sweet-sugar.es/sobre-mi' },
+        ...(recipe.yield && { recipeYield: recipe.yield }),
+        recipeIngredient: recipe.ingredients,
+        recipeInstructions: recipe.steps.flatMap(group => group.name
+            ? [{ '@type': 'HowToSection', name: group.name, itemListElement: toSteps(group.steps) }]
+            : toSteps(group.steps))
+    }
 
     return (
         <div className='flex flex-col min-h-screen'>
@@ -24,6 +43,13 @@ export default function PostDetail({ post }) {
                 <meta property="twitter:title" content={pageTitle}></meta>
                 <meta property="twitter:description" content={post.description}></meta>
                 <meta property="twitter:image" content={imageURL}></meta>
+                {recipeJsonLd && (
+                    <script
+                        key="recipe-jsonld"
+                        type="application/ld+json"
+                        dangerouslySetInnerHTML={{ __html: JSON.stringify(recipeJsonLd).replace(/</g, '\\u003c') }}
+                    />
+                )}
                 <link rel="icon" href="/favicon.png" />
             </Head>
 
@@ -62,7 +88,8 @@ export async function getStaticProps({ params }) {
     }
     return {
         props: {
-            post
+            post,
+            recipe: getRecipeData(params.id)
         }
     }
 }
