@@ -13,7 +13,13 @@ export default function PostDetail({ post, recipe, related }) {
 
     // schema.org structured data: Recipe (rich results in Google) for posts that have ingredients and
     // steps, BlogPosting for the rest (diary-style posts).
-    const toSteps = steps => steps.map(text => ({ '@type': 'HowToStep', text }))
+    // Google recommends a short "name" per HowToStep; derive one from the step text (first clause,
+    // capped at 60 characters) instead of repeating the full instruction.
+    const stepName = text => {
+        const clause = text.split(/[,;.:]| y /)[0].trim()
+        return clause.length <= 60 ? clause : clause.slice(0, 60).replace(/\s+\S*$/, '') + '…'
+    }
+    const toSteps = steps => steps.map(text => ({ '@type': 'HowToStep', name: stepName(text), text }))
     const common = {
         '@context': 'https://schema.org',
         description: post.description,
@@ -28,6 +34,7 @@ export default function PostDetail({ post, recipe, related }) {
             ...common,
             '@type': 'Recipe',
             name: post.title,
+            recipeCuisine: 'Española',
             ...(recipe.yield && { recipeYield: recipe.yield }),
             recipeIngredient: recipe.ingredients,
             recipeInstructions: recipe.steps.flatMap(group => group.name
