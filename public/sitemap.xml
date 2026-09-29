@@ -2,11 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.sweet-sugar.es/</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2026-09-29</lastmod>
   </url>
   <url>
     <loc>https://www.sweet-sugar.es/recetario</loc>
-    <lastmod>2026-09-22</lastmod>
+    <lastmod>2026-09-29</lastmod>
   </url>
   <url>
     <loc>https://www.sweet-sugar.es/sobre-mi</loc>
@@ -142,5 +142,9 @@
   <url>
     <loc>https://www.sweet-sugar.es/post/trufas-chocolate</loc>
     <lastmod>2018-10-11</lastmod>
+  </url>
+  <url>
+    <loc>https://www.sweet-sugar.es/post/yogur-casero</loc>
+    <lastmod>2026-09-29</lastmod>
   </url>
 </urlset>
